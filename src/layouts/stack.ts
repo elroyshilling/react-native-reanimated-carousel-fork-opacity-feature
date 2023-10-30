@@ -324,11 +324,12 @@ function getCommonStyles(opts: {
         ) * 10000,
       ) / 100;
 
-    opacity = interpolate(
-      value,
-      [-1, 0, validLength - 1, validLength],
-      [0.25, 1, 1 - (validLength - 1) * opacityInterval, 0.25],
-    );
+    opacity = 1;
+    // opacity = interpolate(
+    //   value,
+    //   [-1, 0, validLength - 1, validLength],
+    //   [0.25, 1, 1 - (validLength - 1) * opacityInterval, 0.25],
+    // );
   }
   else if (snapDirection === "right") {
     zIndex
@@ -345,11 +346,14 @@ function getCommonStyles(opts: {
           ],
         ) * 10000,
       ) / 100;
-    opacity = interpolate(
-      value,
-      [-validLength, 1 - validLength, 0, 1],
-      [0.25, 1 - (validLength - 1) * opacityInterval, 1, 0.25],
-    );
+    
+    opacity = 1;
+    
+    // opacity = interpolate(
+    //   value,
+    //   [-validLength, 1 - validLength, 0, 1],
+    //   [0.25, 1 - (validLength - 1) * opacityInterval, 1, 0.25],
+    // );
   }
   else {
     throw new Error("snapDirection must be set to either left or right");
